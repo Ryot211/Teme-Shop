@@ -1,0 +1,37 @@
+<div id="countdown" class="countdown-timer">
+  ⏰ Oferta termina en: <span id="timer"></span>
+</div>
+
+<style>
+.countdown-timer {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 20px 0;
+  padding: 10px;
+  background: #ffeaea;
+  border: 2px solid #ff4d4d;
+  border-radius: 8px;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var endDate = new Date("2025-08-31 23:59:59").getTime();
+  var timer = document.getElementById("timer");
+
+  setInterval(function() {
+    var now = new Date().getTime();
+    var distance = endDate - now;
+
+    if (distance > 0) {
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      timer.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    } else {
+      timer.innerHTML = "¡Oferta terminada!";
+    }
+  }, 1000);
+});
+</script>

@@ -1,0 +1,62 @@
+{% schema %}
+{
+  "name": "Productos Destacados",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Seleccionar colección"
+    },
+    {
+      "type": "number",
+      "id": "products_to_show",
+      "label": "Número de productos a mostrar",
+      "default": 4
+    }
+  ]
+}
+{% endschema %}
+
+<div class="featured-products">
+  <h2>🔥 Nuestros Productos Destacados</h2>
+  <div class="grid">
+    {% assign featured_collection = collections[section.settings.collection] %}
+    {% for product in featured_collection.products limit: section.settings.products_to_show %}
+      <div class="product-card">
+        <a href="{{ product.url }}">
+         
+          <p>{{ product.title }}</p>
+          <p>{{ product.price | money }}</p>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+.featured-products {
+  padding: 20px;
+  background: #f8f8f8;
+  border-radius: 12px;
+}
+.featured-products h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+.product-card {
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+.product-card:hover {
+  transform: scale(1.05);
+}
+.product-card img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+</style>
