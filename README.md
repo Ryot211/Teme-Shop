@@ -22,9 +22,6 @@ The goal is to enhance a Shopify storefront by adding marketing-driven features.
 3. Add the new sections ("Productos Destacados" or "Countdown Timer") to your homepage.  
 4. Configure them directly from the theme editor.  
 
-## 📷 Screenshots
-*(Add a screenshot or GIF of your sections inside the Shopify store here)*
-
 ## 💡 Why this matters
 These sections improve **user engagement and conversions** by:  
 - Highlighting key products.  
