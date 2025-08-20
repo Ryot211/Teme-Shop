@@ -30,4 +30,4 @@ These sections improve **user engagement and conversions** by:
 ---
 
 👨‍💻 **Author:** Bryan Gallardo  
-📩 Contact: [tu-email]  
+📩 Contact: gallarjoel@gmail.com
